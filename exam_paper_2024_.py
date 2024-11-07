@@ -43,14 +43,25 @@ print("cherry",cherry)
 print("apple",apple)
 
 
+
 #(b)
 fruits = ["apple","orange","cherry"]
 extra = input("enter an additional fruit to the list: ")
 fruits.append(extra)
 print("the list of 4 fruits is", fruits)
 winner = input("nominate a winning fruit in the list above: ")
-while winner != fruits:
+while winner not in fruits:
     print("error try again")
     winner = input("nominate a winning fruit in the list above :")
+print("the winning fruit you nominated is", winner)
 
-    
+counter = 0
+random_f_1 = choice(fruits)
+random_f_2 = choice(fruits)
+random_f_3 = choice(fruits)
+while random_f_1 != random_f_2 or random_f_1 !=random_f_3 or random_f_2 != random_f_3 or random_f_1 != winner:
+    random_f_1 = choice(fruits)
+    random_f_2 = choice(fruits)
+    random_f_3 = choice(fruits)
+    counter += 1
+print("winner after",counter,"tries")
