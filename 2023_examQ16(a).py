@@ -1,4 +1,3 @@
-#question 16(a)
 from random import randint
 
 def guess_game(max_guesses_allowed):
@@ -12,24 +11,24 @@ def guess_game(max_guesses_allowed):
     secret_number = randint(1,  lvl)
     guess_count = 0
     user_guess = 0
-    
+    guesses =[]
     #(iv)
     max_guesses_allowed = int(input("how many guesses do you want"))
     print(secret_number)
     print(max_guesses_allowed)
     print(guess_count)
-    guesses =[]
     #(iii)
     while (user_guess != secret_number and max_guesses_allowed > guess_count) :
+        guesses.append(user_guess)
         #(ii)
         user_guess =int(input("enter your guess: "))
         if user_guess < secret_number:
             print("sorry! your guess was too low")
-            if  user_guess == user_guess:
+            if  guesses == user_guess:
                 print("you have already guessed this number.")
         elif user_guess > secret_number:
             print("sorry! your guess was too high")
-            if user_guess == user_guess:
+            if guesses == user_guess:
                 print("you have already guessed this number.")
         #elif user_guess == user_guess:
            # print("you have already guessed this number.")
