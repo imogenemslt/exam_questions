@@ -27,7 +27,13 @@ print()
 #(ii)
 print("frequencies: ", frequencies)
 
-#(v)
-print("dice  frequencie")
+#(v)*****
+print("dice  frequencies \n ----  ----------")
+for i in range(6):
+    print(i + 1,"\t",frequencies[i])
+#(vi)*******
+maxfreq = max(frequencies)
+print(frequencies.index(maxfreq) + 1,"was rolled the most often --",max(frequencies), "times")
+
 for i in frequencies:
-    print(i)
+    print (i)
